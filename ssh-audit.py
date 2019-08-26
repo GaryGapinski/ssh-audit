@@ -1365,6 +1365,9 @@ class KexDB(object):  # pylint: disable=too-few-public-methods
 	WARN_CIPHER_WEAK      = 'using weak cipher'
 	WARN_ENCRYPT_AND_MAC  = 'using encrypt-and-MAC mode'
 	WARN_TAG_SIZE         = 'using small 64-bit tag size'
+	
+	# see https://www.openssh.com/releasenotes.html for OpenSSH changes
+	# see https://matt.ucc.asn.au/dropbear/CHANGES for Dropbear changes
 
 	ALGORITHMS = {
 		'kex': {
@@ -1379,6 +1382,7 @@ class KexDB(object):  # pylint: disable=too-few-public-methods
 			'ecdh-sha2-nistp384': [['5.7,d2013.62'], [WARN_CURVES_WEAK]],
 			'ecdh-sha2-nistp521': [['5.7,d2013.62'], [WARN_CURVES_WEAK]],
 			'curve25519-sha256@libssh.org': [['6.5,d2013.62,l10.6.0']],
+			'curve25519-sha256': [['7.4,d2018.76']],
 			'kexguess2@matt.ucc.asn.au': [['d2013.57']],
 		},
 		'key': {
